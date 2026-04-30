@@ -133,6 +133,28 @@ brm_newfinaldata <- brm(
 summary(brm_newfinaldata)
 ```
 
+```{r}
+draws_brm_newfinaldata <- as_draws_df(brm_newfinaldata)
+
+frame_draws_brm_newfinaldata <- draws_brm_newfinaldata |>
+  mutate(
+    eng_emotion_early = b_Intercept, 
+    fr_emotion_early = b_Intercept + b_LanguageFrench,
+    eng_emotion_late = b_Intercept + b_early_lateLatebilingual, 
+    eng_neutral_early = b_Intercept + b_ConditionNeutral, 
+    fr_emotion_late = b_Intercept + b_early_lateLatebilingual + b_LanguageFrench + `b_early_lateLatebilingual:LanguageFrench`,
+    eng_neutral_late = b_Intercept + b_ConditionNeutral + b_early_lateLatebilingual + `b_early_lateLatebilingual:ConditionNeutral`,
+    fr_neutral_early = b_Intercept + b_LanguageFrench + b_ConditionNeutral + `b_LanguageFrench:ConditionNeutral`,
+    fr_neutral_late = b_Intercept + b_ConditionNeutral + b_LanguageFrench + b_early_lateLatebilingual + `b_early_lateLatebilingual:LanguageFrench` + `b_LanguageFrench:ConditionNeutral` + `b_early_lateLatebilingual:ConditionNeutral` +`b_early_lateLatebilingual:LanguageFrench:ConditionNeutral`
+  ) |>
+  select(eng_emotion_early, fr_emotion_early, eng_emotion_late, eng_neutral_early, fr_emotion_late, eng_neutral_late, fr_neutral_early, fr_neutral_late)
+
+```
+
+```{r}
+plot2 <- frame_draws_brm_newfinaldata
+```
+
 ## Discussion
 
 *Write a brief discussion of the your model results in light of the research question.*
