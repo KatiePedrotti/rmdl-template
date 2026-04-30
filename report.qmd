@@ -31,26 +31,108 @@ execute:
 
 ```{r}
 #| label: read-data
+library(tidyverse)
+library(ggplot2)
+library(brms)
+library(dplyr)
 
-# Example code: delete
-1 + 1
+```
 
+```{r}
+alldata = list.files(
+  path = "./data/",
+  pattern = "*.csv$",
+  recursive = TRUE ,
+  full.names = TRUE
+  
+)
+
+compiledlist <- lapply(alldata, function(x) {
+  read_csv(x, skip = 3)
+})
+
+finaldata <- bind_rows(compiledlist) |>
+  filter(condition1 != "practise") |>
+  mutate(
+    early_late = case_when(
+      substring(id,1,1) == "1"~"early",
+      substring(id,1,1) == "2"~"late",
+      TRUE ~""
+    )
+  )
+```
+
+```{r}
+newfinaldata <- finaldata %>%
+  separate_wider_delim(
+    condition1,
+    delim = "_",
+    names = c("Condition", "Language")
+  )
+```
+
+```{r}
+newfinaldata$Language <- recode(newfinaldata$Language,
+                             "eng" = "English",
+                             "fr"  = "French")
+
+newfinaldata$early_late <- recode(newfinaldata$early_late,
+                               "early" = "Early bilingual",
+                               "late"  = "Late bilingual")
+
+newfinaldata$Condition <- recode(newfinaldata$Condition,
+                               "emotion" = "Emotion",
+                               "neutral"  = "Neutral")
 ```
 
 ### Plot the data
 
 *Create relevant plots: for each, include a description of the plot (type, axes, colours used and so on) and a description of relevant patterns.*
 
+```{r}
+newfinaldata |>
+  ggplot(aes(early_late, RT, colour = Language)) +
+  geom_jitter(alpha = 0.7, width = 0.1) +
+  facet_wrap(~ Condition) +
+  labs(
+    x = "Early or Late Bilingual", 
+    y = "Reaction Time (ms)", 
+    title = "AoA (Early or Late Bilingual) influence on reaction time 
+    to emotion and to neutral words")
+```
+
 ### Summarise the data
 
 *Calculate and report appropriate summary measures for relevant variables in the data.*
+
+```{r}
+newfinaldata |> 
+  group_by(Condition, Language, early_late) |> 
+  summarise(
+    mean = mean(RT), sd = sd(RT))
+```
 
 ## Regression modelling
 
 *Write an explanation of the regression model(s) you will run to answer the chosen research question. Fit the model and get a model summary and relevant model plots. Report the results of the model.*
 
+```{r}
+brm_newfinaldata <- brm(
+  RT ~ early_late * Language * Condition +
+    (Language + Condition | id ),
+  family = lognormal,
+  data = newfinaldata,
+  seed = 456,
+  cores = 4,
+  file = "cache/brmfinaldata", 
+  control = list(adapt_delta = 0.99, max_treedepth = 15)
+)
+```
+
+```{r}
+summary(brm_newfinaldata)
+```
+
 ## Discussion
 
 *Write a brief discussion of the your model results in light of the research question.*
-
-hello
