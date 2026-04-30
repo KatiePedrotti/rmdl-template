@@ -1,0 +1,44 @@
+,subjectGroup,browser,version,screenWidth,screenHeight,OS,OS_lang,GMT_timestamp,local_timestamp,trial_file_version,link,calibration,id,duration_s,,,,,,,,,,,
+,4,Chrome,146.0.0.0,1512,982,MacOS,en-CA,2026-04-16_11:52:00,2026-04-16_12:52:00,2026-04-11_14:55:47,https://www.testable.org/experiment/20526/508491/start,0.99,1678,255.855,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,
+id,rowNo,type,condition1,stim1,textColor,stimFormat,subjectGroup,keyboard,key,ITI,presTime,stimOptions,random,trialText,ITI_ms,ITI_f,ITI_fDuration,presTime_ms,presTime_f,presTime_fDuration,timestamp,response,RT,stimOrder_actual,correct
+1678,3,test,practise,beach,green,word,,a l,l,1200,3000,,,A = BLUE\nL = GREEN,1200,144,8.33,2836,340,8.33,203590,l,2830,,1
+1678,4,test,practise,dog,blue,word,,a l,a,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,854,102,8.33,205242,a,850,,1
+1678,5,test,practise,plage,blue,word,,a l,a,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,648,77,8.33,206686,a,644,,1
+1678,6,test,practise,chien,green,word,,a l,l,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,824,98,8.33,208303,l,821,,1
+1678,7,test,practise,maison,green,word,,a l,l,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,516,61,8.33,209612,l,513,,1
+1678,8,test,practise,house,blue,word,,a l,a,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,435,52,8.33,210839,a,432,,1
+1678,9,test,practise,chaise,blue,word,,a l,a,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,559,66,8.33,212196,a,555,,1
+1678,10,test,practise,chair,green,word,,a l,l,800,3000,,,A = BLUE\nL = GREEN,800,96,8.33,522,62,8.33,213510,l,518,,1
+1678,79,test,emotion_eng,greed,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,577,69,8.33,216398,a,573,word1,1
+1678,40,test,emotion_fr,dégoûté,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,501,60,8.33,217696,l,496,word1,1
+1678,71,test,neutral_fr,ancre,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,384,45,8.33,218880,a,381,word1,1
+1678,77,test,emotion_eng,grief,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,474,56,8.33,220144,a,470,word1,1
+1678,73,test,neutral_fr,barrot,blue,word,nsg:4,a l,a,800,1700,random,1,,799,96,8.32,479,57,8.35,221415,a,477,word1,1
+1678,76,test,emotion_eng,nervous,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,438,52,8.33,222650,l,434,word1,1
+1678,112,test,neutral_eng,keel,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,464,55,8.33,223909,l,460,word1,1
+1678,83,test,emotion_eng,scared,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.34,487,58,8.33,225191,a,486,word1,1
+1678,78,test,emotion_eng,upset,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,517,61,8.33,226504,l,513,word1,1
+1678,108,test,neutral_eng,engine,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,626,75,8.33,227921,l,622,word1,1
+1678,37,test,emotion_fr,panique,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,439,52,8.33,229159,a,435,word1,1
+1678,39,test,emotion_fr,énervé,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,412,49,8.33,230366,a,409,word1,1
+1678,41,test,emotion_fr,déprimé,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,395,47,8.33,231557,a,390,word1,1
+1678,43,test,emotion_fr,tourmenté,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,412,49,8.33,232766,a,409,word1,1
+1678,111,test,neutral_eng,cabin,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,421,50,8.33,233983,a,417,word1,1
+1678,82,test,emotion_eng,lonely,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,409,49,8.33,235188,a,405,word1,0
+1678,75,test,neutral_fr,corde,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,721,86,8.33,236708,a,717,word1,1
+1678,115,test,neutral_eng,deck,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,481,57,8.33,237985,a,478,word1,1
+1678,42,test,emotion_fr,furieux,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,570,68,8.33,239349,l,567,word1,1
+1678,74,test,neutral_fr,bâbord,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,407,48,8.33,240553,l,403,word1,1
+1678,114,test,neutral_eng,seat,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,449,53,8.33,241794,l,445,word1,1
+1678,113,test,neutral_eng,motor,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,480,57,8.33,243067,a,476,word1,1
+1678,68,test,neutral_fr,conducteur,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,507,60,8.33,244369,l,503,word1,1
+1678,109,test,neutral_eng,boom,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,482,57,8.32,245644,a,478,word1,1
+1678,72,test,neutral_fr,pagaie,green,word,nsg:4,a l,l,800,1700,random,1,,801,96,8.34,606,72,8.33,247043,l,603,word1,1
+1678,70,test,neutral_fr,plancher,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,556,66,8.33,248393,l,553,word1,1
+1678,38,test,emotion_fr,peur,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,428,51,8.34,249614,l,425,word1,1
+1678,81,test,emotion_eng,jealousy,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,514,61,8.33,250926,a,509,word1,1
+1678,80,test,emotion_eng,anxiety,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,454,54,8.34,252174,l,450,word1,1
+1678,110,test,neutral_eng,stern,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,436,52,8.33,253406,l,432,word1,1
+1678,69,test,neutral_fr,hélice,blue,word,nsg:4,a l,a,800,1700,random,1,,800,96,8.33,422,50,8.33,254626,a,419,word1,1
+1678,36,test,emotion_fr,craintif,green,word,nsg:4,a l,l,800,1700,random,1,,800,96,8.33,435,52,8.33,255855,l,431,word1,1
