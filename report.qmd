@@ -9,9 +9,9 @@ execute:
 
 ## Background
 
-- *Instructions are given in italics. You should remove all instructions before submitting*.
+-   *Instructions are given in italics. You should remove all instructions before submitting*.
 
-- *You MUST include all code and code output in this report. This is a data analysis report, not an essay or journal article.*
+-   *You MUST include all code and code output in this report. This is a data analysis report, not an essay or journal article.*
 
 *Write a brief literature background for your Stroop task study. Explicitly state your Research Questions and, if available, your Research Hypotheses.*
 
@@ -52,3 +52,5 @@ execute:
 ## Discussion
 
 *Write a brief discussion of the your model results in light of the research question.*
+
+hello
