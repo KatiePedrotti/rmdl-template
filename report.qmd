@@ -15,9 +15,11 @@ The Stroop effect is a cognitive interference effect from the Stroop task [@stro
 
 ### Research Questions/Hypotheses
 
-**Research question:** Does age of acquisition influence reaction time to emotion and to neutral words in a bilingual Stroop paradigm? \
-\
-**Research hypothesis:** Hypothesis is based on the results of @sutton_automatic_2007. In early bilinguals, a slower reaction time is predicted for emotion words compared to neutral words in both French and English conditions. For late bilinguals, a slower reaction time is predicted for emotion words than for neutral words only in the English condition. An interaction between word condition and language is therefore only expected in late bilinguals. Therefore, we expect that an emotion interference effect will negatively correlate with language proficiency, with early bilinguals showing faster reaction times than late bilinguals.
+**Research question:**
+
+The research question asks broadly if age of acquisition influences reaction time to French and English emotion compared to neutral words in a bilingual Stroop paradigm. Specifically, the present study investigates if an emotional interference effect is observed similarly or differentially across early and late bilinguals groups in an emotional bilingual Stroop paradigm across languages (French compared to English). 
+
+**Research hypothesis:** Hypothesis is based on the results of [@articlesutton_automatic_2007]. Overall, we can predict that both groups will show a slower reaction time in the emotion condition compared to the neutral condition, due to the emotional interference effect. In early bilinguals, since they have fluency in both French and English and acquired both languages in early childhood, it is predicted that this group will display an equal amount of interference across both languages, meaning similar reaction times will be shown. For late bilinguals, a slower reaction time is predicted for emotion words than for neutral words only in the English condition, since the emotional interference effect is predicted to be stronger in the L1. Overall we can expect the emotional interference effect to negatively correlate with age of acquisition, such that early bilinguals will show faster reaction times than late bilinguals to French emotional stimuli.
 
 ## Methods
 
@@ -143,7 +145,32 @@ newfinaldata$Condition <- recode(newfinaldata$Condition,
                                "neutral"  = "Neutral")
 ```
 
-I used separate_wider_delim() in order to create new columns which identified the condition (emotion and neutral) and language (French and English), and re-coded the column names accordingly. The relevant columns are therefore Condition (emotion/neutral stimuli), Language (French/English stimuli), and Early_Late (early or late bilingual), as well as RT (reaction time).
+I used separate_wider_delim() in order to create new columns which identified the condition (emotion and neutral) and language (French and English), and re-coded the column names accordingly. The relevant columns are therefore Language (French/English stimuli), Early_Late (early or late bilingual), and Condition (emotion/neutral stimuli). Importantly, Reaction time (RT) appears in a column, which was captured by Testable.
+
+### Summary of the raw data
+
+```{r}
+newfinaldata |> 
+  group_by(Condition, Language, early_late) |> 
+  summarise(
+    mean = mean(RT), sd = sd(RT))
+```
+
+In order to investigate if age of acquisition affects reaction time to emotion and neutral words in the bilingual Stroop task, I analysed participant reaction times across condition (neutral vs. emotion) and language (French vs. English). 
+
+Across conditions, the raw data shows that late bilinguals showed faster mean reaction times than early bilinguals. 
+
+In the emotion condition, early bilinguals had a faster reaction time in French (mean = 726.38ms, SD = 440.26) than in English (mean = 817.83ms, SD = 561.09), while the late bilinguals showed the reverse pattern, demonstrating slightly faster reaction times in French (mean = 533.33ms, SD = 215.51) than in English (mean = 542.31ms, SD = 255.28). Overall in the emotion condition, the late bilinguals had faster reaction times in both languages than the early bilinguals. 
+
+A similar pattern can be observed in the neutral condition. Early bilinguals had a faster reaction time in French (mean = 755.85ms, SD = 376.74ms) than in English (mean = 805.58ms, SD = 536.91ms) in the neutral condition, while late bilinguals had a faster reaction time in English (mean = 515.77ms, SD = 196.49ms) than in French (mean = 536.77ms, SD = 204.00ms) in the neutral condition. Therefore overall in the neutral condition, late bilinguals showed faster reaction times in both languages compared to early bilinguals. 
+
+Comparing conditions, early bilinguals showed a slightly faster reaction time in the emotion condition in English (English: mean = 817.83ms, SD = 561.08ms) compared to the neutral condition in English (English: mean = 805.58ms, SD = 536.91ms) but showed the reverse pattern in the emotion condition in French (emotion: mean = 726.38ms, SD = 440.26, neutral: mean = 755.85ms, SD = 376.74ms). 
+
+The late bilinguals showed the reverse pattern, demonstrating a slower reaction time in the emotion condition in English (mean = 542.31, SD = 255.28) compared to the neutral condition in English (mean = 515.77ms, SD = 196.49ms), but the same pattern as the early bilinguals across the French conditions, such that they performed slightly faster in the French emotion condition (mean = 533.33ms, SD = 215.51) then the French neutral condition (mean = 536.77ms, SD = 204.00ms), but to a lesser extent than the early bilinguals demonstrated. 
+
+Taken together, late bilinguals had faster reaction times than early bilinguals, with early bilinguals showing a faster reaction time to emotion words in French (compared to neutral condition), and late bilinguals showing a faster reaction time in the neutral condition in English.
+
+The differing patterns across participant groups in the raw data therefore suggest that the emotional interference effect may differ with age of acquisition, such that late bilinguals showed a faster reaction time across both language and condition. However, the raw data suggests that this effect was not the same across languages, since early bilinguals had a stronger interference effect in the neutral condition than the emotion condition. Statistical analysis is required to verify these patterns.
 
 ### Plotting the raw data
 
@@ -168,31 +195,6 @@ The plot shows firstly in the emotion condition, that late bilinguals showed les
 In the neutral condition, there is slightly more variation across languages, with late bilinguals appearing to perform very slightly faster in English than in French, and early bilinguals' reaction times showing more variation compared to late bilinguals in this condition. The plot reflects a slightly faster reaction time across conditions and across language for late bilinguals.
 
 There are some outliers across condition, group and language, but these appear to be more pronounced in the early bilinguals comapred to the late bilinguals.
-
-The raw data is further described in the summary measures (below).
-
-### Summary of the raw data
-
-```{r}
-newfinaldata |> 
-  group_by(Condition, Language, early_late) |> 
-  summarise(
-    mean = mean(RT), sd = sd(RT))
-```
-
-In order to investigate if age of acquisition affects reaction time to emotion and neutral words in the bilingual Stroop task, I analysed participant reaction times across condition (neutral vs. emotion) and language (French vs. English). 
-
-Across conditions, late bilinguals showed faster mean reaction times than early bilinguals. 
-
-In the emotion condition, early bilinguals had a faster reaction time in French (mean = 726.38ms, SD = 440.26) than in English (mean = 817.83ms, SD = 561.09), while the late bilinguals showed the reverse pattern, demonstrating slightly faster reaction times in French (mean = 533.33ms, SD = 215.51) than in English (mean = 542.31ms, SD = 255.28). Overall in the emotion condition, the late bilinguals had faster reaction times in both languages than the early bilinguals. 
-
-A similar pattern can be observed in the neutral condition. In language conditions, early bilinguals had a faster reaction time in French (mean = 755.85ms, SD = 376.74ms) than in English (mean = 805.58ms, SD = 536.91ms) in the neutral condition, while late bilinguals had a faster reaction time in English (mean = 515.77ms, SD = 196.49ms) than in French (mean = 536.77ms, SD = 204.00ms) in the neutral condition. Therefore overall in the neutral condition, late bilinguals showed faster reaction times in both languages compared to early bilinguals. 
-
-Comparing conditions, early bilinguals showed a slightly faster reaction time in the emotion condition in English (English: mean = 817.83ms, SD = 561.08ms) compared to the neutral condition in English (English: mean = 805.58ms, SD = 536.91ms) but showed the reverse pattern in the emotion condition in French (emotion: mean = 726.38ms, SD = 440.26, neutral: mean = 755.85ms, SD = 376.74ms). 
-
-The late bilinguals showed the reverse pattern, demonstrating a slower reaction time in the emotion condition in English (mean = 542.31, SD = 255.28) compared to the neutral condition in English (mean = 515.77ms, SD = 196.49ms), but the same pattern as the early bilinguals across the French conditions, such that they performed slightly faster in the French emotion condition (mean = 533.33ms, SD = 215.51) then the French neutral condition (mean = 536.77ms, SD = 204.00ms), but to a lesser extent than the early bilinguals demonstrated. 
-
-Taken together, late bilinguals had faster reaction times than early bilinguals, with early bilinguals showing a faster reaction time to emotion words in French (compared to neutral condition), and late bilinguals showing a faster reaction time in the neutral condition in English. The differing patterns across participant groups in the raw data therefore suggest that age of acquisition may affect reaction time to emotion and neutral words across condition and language, such that late bilinguals showed a faster reaction time across both language and condition.
 
 ### Regression modelling
 
@@ -318,15 +320,23 @@ I used a half-eye plot to demonstrate logged Reaction times on the x-axis, facet
 
 ## Discussion
 
-**Research question:** Does age of acquisition influence reaction time to emotion and to neutral words in a bilingual Stroop paradigm? 
+The present study investigated if age of acquisition influences reaction time to French and English emotion compared to neutral words in a bilingual Stroop paradigm, comparing the emotional interference effect across early and late bilinguals groups and across languages (French compared to English). 
 
-The research question asked does age of acquisition influence reaction times across conditions (emotion vs neutral) and across language (French vs English). In other words, is an emotional Stroop interference effect observed across different age of acquisition groups (early vs late bilinguals) and when the stimuli is presented in an L1 or an L2. 
+In terms of the overall emotional interference effect, the statistical analysis did not confirm an effect, since both groups performed similarly across both conditions (neutral compared to emotion) in French and in English. 
 
-While analysis of the raw data suggested that late bilinguals show a faster reaction time than early bilinguals across conditions (emotion vs neutral) and across languages (French vs English), the statistical analysis returned highly uncertain results and therefore no conclusions can be drawn at this stage.
+Furthermore, in regards to age of acquisition, while analysis of the raw data suggested that late bilinguals show a faster reaction time than early bilinguals across conditions (emotion vs neutral) and across languages (French vs English), the statistical analysis still returned highly uncertain results and therefore no conclusions can be drawn at this stage. In particular, the interactions between age of acquisition, conditions and languages were uncertain, meaning the specific emotional interference effect in L1 compared to L2 is uncertain. 
 
 ### Limitations
 
-It is worth mentioning several limitations of the study. Firstly, it is still a small participant cohort (5 early bilinguals and 6 late bilinguals), which may have contributed to the high  degree of certainty in the results. Secondly, operationalising age of acquisition as a categorical variable may have obscured between-group differences ( [@singleton_age_2022; @wagner_what_2022], and therefore treating age of acquisition as a continuous variable may have led to different results. Additionally, since the main focus of the study was investigating the emotional Stroop effect, rather than the Stroop effect associated with orthographical/colour interference, I chose to still include the incorrect trials alongside the correct trials, which may have contributed to the variation in results. Finally, it is likely that the stimuli presented some problems, since the stimuli used by Sutton (2007) and replicated in this study contain obscure neutral nouns of boat parts, which are uncommon both in English and in French. It is possible that participants (in particular the late bilingual group, who had lower levels of proficiency in French than the early bilingual group) were unfamiliar with the neutral lexical items, which may have conversely affected their reaction times compared to a different set of more common neutral lexical items. This may therefore suggest that results could be due to proficiency levels, rather than age of acquisition.
+There are several limitations to the study which could explain the uncertainty of the results.
+
+Firstly, it is still a small participant cohort (5 early bilinguals and 6 late bilinguals), so including more participants may have returned a higher degree of certainty in the results.
+
+Secondly, operationalising age of acquisition as a categorical variable may have obscured between-group differences [@singleton_age_2022; @wagner_what_2022], and therefore treating age of acquisition as a continuous variable may have led to different results.
+
+Additionally, since the main focus of the study was investigating the emotional Stroop effect, rather than the Stroop effect associated with orthographical/colour interference, I chose to include the incorrect trials alongside the correct trials. Removing the incorrect trials may have returned more certainty.
+
+Finally, it is likely that the stimuli presented some difficulties, since the stimuli used by Sutton (2007) and replicated in this study contain uncommon lexical items (nautical nouns), which are uncommon both in English and in French. It is possible that participants were surprised by these stimuli, meaning that any effect of emotional interference was obscured by a processing delay of encountering an uncommon noun. The late bilingual group, who had lower levels of proficiency in French than the early bilingual group, may also have been completely unfamiliar with these neutral lexical items, which may have conversely affected their reaction times compared to a different set of more common neutral lexical items. This may therefore suggest that results could be due to proficiency levels, rather than age of acquisition.
 
 ## Appendix
 
