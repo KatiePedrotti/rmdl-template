@@ -1,33 +1,87 @@
 ---
 title: "RMDL Assessment 2: Data Analysis Report"
 authors:
-  - name: YOUR EXAM NUMBER
+  - name: B287980
 bibliography: references.bib
 execute: 
   echo: true
 ---
 
-## Background
+## 1. Background
 
--   *Instructions are given in italics. You should remove all instructions before submitting*.
+In bilinguals, research often reflects that the mother tongue is more strongly associated with emotion, while the second language can be used to create emotional distance [@bookdewaele_emotions_2010]. However, results also reflect that early simultaneous bilinguals demonstrate similar patterns of response to emotion words in both languages [@articleharris_when_2006]. It appears that processing of emotion words in first and second languages varies with proficiency. 
 
--   *You MUST include all code and code output in this report. This is a data analysis report, not an essay or journal article.*
-
-*Write a brief literature background for your Stroop task study. Explicitly state your Research Questions and, if available, your Research Hypotheses.*
+The Stroop effect is a cognitive interference effect from the Stroop task [@articlestroop_studies_1935], whereby identification of a written colour word’s ink colour is slower when the written word is printed in a conflicting colour: for example, the word ‘blue’ printed in green ink is more slowly identified than when it is printed in blue link, due to interference from the automatic process of reading during colour identification. Subsequent research has led to several variations of the Stroop task. One such variant is the emotional Stroop task, in which participants identify the ink colour of emotionally salient and neutral words rather than colour words. The resulting interference effect is theorised to be the result of interference caused by the emotion stimuli, the process for which is automatic and immediate [@incollectionbargh_automaticity_1997]. In addition, the Stroop paradigm has been widely applied in bilingual contexts to examine patterns of interference across languages [@articlemagiste_stroop_1984]. Research largely suggests that interference effects vary with language proficiency, with lower proficiency typically leading to a greater interference effect [@articlesutton_automatic_2007]. This may reflect reduced automaticity in lexical processing, leading to increased competition between linguistic and task-related processes. The following study builds on the theory of the emotion Stroop effect and bilingual Stroop effect, to investigate the effect of age of acquisition of emotional interference in English-French bilingual speakers. 
 
 ### Research Questions/Hypotheses
 
-## Methods
+**Research question:** Does age of acquisition influence reaction time to emotion and to neutral words in a bilingual Stroop paradigm? \
+\
+**Research hypothesis:** Hypothesis is based on the results of @articlesutton_automatic_2007. In early bilinguals, a slower reaction time is predicted for emotion words than for neutral words in both French and English conditions. For late bilinguals, a slower reaction time is predicted for emotion words than for neutral words only in the English condition. An interaction between word condition and language is therefore only expected in late bilinguals. Therefore, we expect that an emotion interference effect will negatively correlate with language proficiency, with early bilinguals showing faster reaction times than late bilinguals.
 
-*Briefly report the methods of the study (participants, materials, procedure, statistical analysis...). Note that when discussing the statistical analysis you should clearly state how the analysis results will be used to assess the RQs/RHs (be as specific and precise as you can). Include an Open Research/Data availability statement.*
+## 2. Methods
 
-## Data
+### Participants
 
-*Remember to include all code and code output in the submission.*
+The study uses two participants groups: early simultaneous bilingual French-English speakers (attainment of both languages before the age of 11) and sequential French-English speakers (native English speakers who learnt French as a second language after the age of 11). The late bilingual group had 6 participants, and the early bilingual groups had 5 participants, so a total of 11 participants took part in the study. 
 
-### Read and process the data
+In the late bilingual group, acquisition of French was between the ages of 11 - 15 (mean = 11), with fluency (mean = 71% range = 50 - 90%) achieved from the ages of 16 - 20 (mean = 18), with one participant describing themselves as not fluent in French. All participants had proficiency and/or fluency additionally in Italian, Spanish, German, and BSL or a combination of these languages. 1 participant had acquired Italian and English from birth, and had acquired L4 French after L3 German, while the remaining 5 participants had acquired French as an L2. On average, participants were exposed to English 79.5% of the time, French 8.4% of the time, and other languages 12.1% of the time. 4 participants reported that they would choose to read in English over another language, while 1 participant reported a 50% preference for French and English, and 1 participant reported that they would choose to read in Italian. 
 
-*Read the data here. If the data needs processing, like mutating columns or creating new ones, briefly explain why processing is needed and what you did*. *Include a description of each of the relevant columns in the data.*
+In the early bilingual group, 4 participants were simultaneous learners of French and English, meaning they acquired them simultaneously from birth, while 1 participant acquired French from birth and English from age 4, and 1 participant was a native French speaker who acquired fluency in English from age 10. All participants had proficiency and/or fluency additionally in Spanish, German and Russian, or a combination of these languages. On average, participants were exposed to English 73.3% and to French 23% of the time, and to another language 3.7% of the time. 4 participants reported that they would choose to read in English, while 1 reported that they would choose to read in French. 
+
+All participants were aged between 19 - 28 and are university educated, and currently reside in the United Kingdom or the United States.
+
+#### Table 1 - Participant characteristics
+
++-------------------+--------------------------------------------+--------------------------------------------------+-------------------------------------------------------+---------------------------+
+| Participant group | Age of acquisition of French (mean, range) | Self-rated fluency level in French (mean, range) | Age at which fluency in French achieved (mean, range) | Current language exposure |
++===================+============================================+==================================================+=======================================================+===========================+
+| Late bilinguals   | 11, 11 - 15                                | 71%, 50 - 90%                                    | 18, 16 - 20                                           | English = 79.5%           |
+|                   |                                            |                                                  |                                                       |                           |
+|                   |                                            |                                                  |                                                       | French = 8.4%             |
+|                   |                                            |                                                  |                                                       |                           |
+|                   |                                            |                                                  |                                                       | Other = 12.1%             |
++-------------------+--------------------------------------------+--------------------------------------------------+-------------------------------------------------------+---------------------------+
+| Early bilinguals  | 1, 0-4                                     | N/A                                              | N/A                                                   | English = 73.3%           |
+|                   |                                            |                                                  |                                                       |                           |
+|                   |                                            |                                                  |                                                       | French = 23%              |
+|                   |                                            |                                                  |                                                       |                           |
+|                   |                                            |                                                  |                                                       | Other = 3.7%              |
++-------------------+--------------------------------------------+--------------------------------------------------+-------------------------------------------------------+---------------------------+
+
+### **Materials**
+
+***Language history questionnaire***
+
+Firstly, all participants completed a language history questionnaire [@onlinemarian_leap-questionnaire_2007], which collects information on their language acquisition background and self-proficiency ratings. The information is presented below in Figure 1 (above).
+
+***Stroop task*** 
+
+The Stroop task assessment was built using the materials adapted from @articlesutton_automatic_2007. In the original study, the word list was composed of two different types of words: negative emotion words (e.g. anger) and neutral (non-emotion related) words which belonged to the category ‘nautical nouns’ (e.g. boat). The English words were repeated in Spanish. @articlesutton_automatic_2007 highlight that the chosen words were high in arousal and low in valence, and matched for frequency and length. Therefore, the current study uses the same English word list but with French translated equivalents (rather than Spanish) in order to build on the results of @articlesutton_automatic_2007 and investigate a different language combination. The complete word list (French & English, emotion and neutral items) was repeated in blue ink and in green ink. The word list was therefore divided into three blocks: language (French/English), word type (neutral/emotion) and ink colour (blue/green). Due to the small scale of the study, the translated French words were not matched for frequency and length. 
+
+Participants saw a total of 32 items, as items were counterbalanced across colours and languages: half of the emotion items appeared in English and half in French, and the same applied to neutral items. The items were not repeated across languages (for example, if a participant saw the English word ‘boat’ they would not see the French equivalent ‘bateau’). Items were also counterbalanced across colour: each word was presented once, in one colour, and not repeated in the second colour. In summary, participants saw eight neutral English items (4 in green, 4 in blue), eight emotion English items (4 in green, 4 in blue), eight neutral French items (4 in green, 4 in blue), and eight emotion French items (4 in green, 4 in blue). Items were blocked by language, and the order that the blocks were presented in was pseudorandomised and counterbalanced across participants.
+
+A complete list of stimuli can be found in the Appendix.
+
+### **Procedure**
+
+The Stroop task was conducted online via Testable, with each participant completing it on their own device. Participants first completed a practice session, consisting of a total of 6 neutral items, which were in a distinct semantic category to the critical trial neutral items. In the practice condition, the word appeared on the screen for 3 seconds. Participants were instructed to press the ‘L’ key if the word appeared in green ink, and the ‘A’ key if the word appeared in blue ink. Instructions only appeared in English. For the practice trials, the key/colour reminder prompt appeared on the screen alongside the practice word. Participants were not given feedback on the practice condition if their answer was correct. Following the practice condition, the participants immediately completed the critical trial conditions. They were instructed that in the critical condition, the word would appear on screen for less time - a total of 1.7 seconds - and the prompt would not appear on the screen alongside the critical word. 
+
+### **Statistical Analysis**
+
+In order to answer the research question, *does age of acquisition influence reaction time to emotion and to neutral words in a bilingual Stroop paradigm,* age of acquisition will be treated as a categorical variable of early bilinguals and late bilinguals. The bilingual Stroop paradigm is operationalised as language of stimuli (English, French).
+
+Reaction times in milliseconds for each trial will be analysed using mixed-effects regression modelling. Summary measures for mean and standard deviation of the raw data will be reported. The study will then employ a 3x3 mixed factorial design of lognormal regression, with group (early vs late) as between-participant fixed effects and condition (emotion vs neutral) and language of stimuli (French vs English) as within-participant random effects. The posterior means, standard deviations and credible intervals will then be reported.
+
+### **Data Availability**
+
+Anonymised participant data (Stroop task performance) is available on the following GitHub link: <https://github.com/KatiePedrotti/rmdl-template>
+
+To respect participant privacy, language questionnaires are not available.
+
+## 3. Data analysis
+
+### Reading and processing the data
 
 ```{r}
 #| label: read-data
@@ -35,6 +89,8 @@ library(tidyverse)
 library(ggplot2)
 library(brms)
 library(dplyr)
+library(posterior)
+library(tidybayes)
 
 ```
 
@@ -62,8 +118,10 @@ finaldata <- bind_rows(compiledlist) |>
   )
 ```
 
+As the data were in separate files and lacking identifying columns, I firstly used list.files() to list all the available results files, and lapply () to compile them together, with read_csv(x, skip =3) in order to skip the first 3 rows of each dataset which did not contain any data. Then I used bind_rows to read in this data, and filtered out the 6 practise conditions using filter(). I then used mutate() in order to create a column which classified the participants as early or late bilinguals based on their participant number (1 were early bilinguals, 2 were late bilinguals).
+
 ```{r}
-newfinaldata <- finaldata %>%
+newfinaldata <- finaldata |>
   separate_wider_delim(
     condition1,
     delim = "_",
@@ -85,9 +143,9 @@ newfinaldata$Condition <- recode(newfinaldata$Condition,
                                "neutral"  = "Neutral")
 ```
 
-### Plot the data
+I used separate_wider_delim() in order to create new columns which identified the condition (emotion and neutral) and language (French and English), and re-coded the column names accordingly. The relevant columns are therefore Condition (emotion/neutral stimuli), Language (French/English stimuli), and Early_Late (early or late bilingual), as well as RT (reaction time).
 
-*Create relevant plots: for each, include a description of the plot (type, axes, colours used and so on) and a description of relevant patterns.*
+### Plotting the data
 
 ```{r}
 newfinaldata |>
@@ -101,9 +159,19 @@ newfinaldata |>
     to emotion and to neutral words")
 ```
 
-### Summarise the data
+#### Figure 1 - Age of acquisition (early or late bilingual) effect on reaction time (RT) across condition (emotion and neutral stimuli) and language (French and English). 
 
-*Calculate and report appropriate summary measures for relevant variables in the data.*
+I used a jitter plot to represent the raw data, since it combines numeric (reaction times) and categorical variables. The jitter plot is faceted by Condition (neutral and emotion stimuli), with the x-axis showing Participant group (early or late bilingual) and the y-axis showing Reaction Time (ms). The colours differentiate the Language of the stimuli (French = blue, English = red). 
+
+The plot shows firstly in the emotion condition, that late bilinguals showed less variation and therefore are more densely represented than the early bilinguals. There is minimal variation across both participant groups between languages (English compared to French). 
+
+In the neutral condition, there is slightly more variation across languages, with late bilinguals appearing to perform very slightly faster in English than in French, and early bilinguals' reaction times showing more variation compared to late bilinguals in this condition. The plot reflects a slightly faster reaction time across conditions and across language for late bilinguals.
+
+There are some outliers across condition, group and language, but these appear to be more pronounced in the early bilinguals comapred to the late bilinguals.
+
+The raw data is further described in the summary measures (below).
+
+### Summary of the data
 
 ```{r}
 newfinaldata |> 
@@ -112,9 +180,25 @@ newfinaldata |>
     mean = mean(RT), sd = sd(RT))
 ```
 
-## Regression modelling
+In order to investigate if age of acquisition affects reaction time to emotion and neutral words in the bilingual Stroop task, I analysed participant reaction times across condition (neutral vs. emotion) and language (French vs. English). 
+
+Across conditions, late bilinguals showed faster mean reaction times than early bilinguals. 
+
+In the emotion condition, early bilinguals had a faster reaction time in French (mean = 726.38ms, SD = 440.26) than in English (mean = 817.83ms, SD = 561.09), while the late bilinguals showed the reverse pattern, demonstrating slightly faster reaction times in French (mean = 533.33ms, SD = 215.51) than in English (mean = 542.31ms, SD = 255.28). Overall in the emotion condition, the late bilinguals had faster reaction times in both languages than the early bilinguals. 
+
+A similar pattern can be observed in the neutral condition. In language conditions, early bilinguals had a faster reaction time in French (mean = 755.85ms, SD = 376.74ms) than in English (mean = 805.58ms, SD = 536.91ms) in the neutral condition, while late bilinguals had a faster reaction time in English (mean = 515.77ms, SD = 196.49ms) than in French (mean = 536.77ms, SD = 204.00ms) in the neutral condition. Therefore overall in the neutral condition, late bilinguals showed faster reaction times in both languages compared to early bilinguals. 
+
+Comparing conditions, early bilinguals showed a slightly faster reaction time in the emotion condition in English (English: mean = 817.83ms, SD = 561.08ms) compared to the neutral condition in English (English: mean = 805.58ms, SD = 536.91ms) but showed the reverse pattern in the emotion condition in French (emotion: mean = 726.38ms, SD = 440.26, neutral: mean = 755.85ms, SD = 376.74ms). 
+
+The late bilinguals showed the reverse pattern, demonstrating a slower reaction time in the emotion condition in English (mean = 542.31, SD = 255.28) compared to the neutral condition in English (mean = 515.77ms, SD = 196.49ms), but the same pattern as the early bilinguals across the French conditions, such that they performed slightly faster in the French emotion condition (mean = 533.33ms, SD = 215.51) then the French neutral condition (mean = 536.77ms, SD = 204.00ms), but to a lesser extent than the early bilinguals demonstrated. 
+
+Taken together, late bilinguals had faster reaction times than early bilinguals, with early bilinguals showing a faster reaction time to emotion words in French (compared to neutral condition), and late bilinguals showing a faster reaction time in the neutral condition in English. The differing patterns across participant groups in the raw data therefore suggest that age of acquisition may affect reaction time to emotion and neutral words across condition and language, such that late bilinguals showed a faster reaction time across both language and condition.
+
+### Regression modelling
 
 *Write an explanation of the regression model(s) you will run to answer the chosen research question. Fit the model and get a model summary and relevant model plots. Report the results of the model.*
+
+I used Bayesian log-normal regression model for the outcome variable reaction time (RT) using brms. This distribution allows positive-only values, continuous variables, and is able to account for right-skewed data. This was fitted with Group (early vs late bilinguals) as between-participant fixed effects, and Condition (emotion vs neutral) and Language (French vs English) as within-participant random effects, and including Participant ID as random effect to account for inter-participant variability. I then obtained summary measures.
 
 ```{r}
 brm_newfinaldata <- brm(
@@ -134,6 +218,16 @@ summary(brm_newfinaldata)
 ```
 
 ```{r}
+summary(brm_newfinaldata, 0.8)
+```
+
+```{r}
+summary(brm_newfinaldata, 0.6)
+```
+
+After obtaining summary measures at 95%, 80% and 60% credible intervals, I obtained the model draws, implementing the relevant predictors and interactions based on the b_Intercept as english_emotion_early. I then had select() the relevant columns and pivot_longer() in order to make new columns for these predictors, which I could then plot into the graph (below).
+
+```{r}
 draws_brm_newfinaldata <- as_draws_df(brm_newfinaldata)
 
 frame_draws_brm_newfinaldata <- draws_brm_newfinaldata |>
@@ -142,19 +236,74 @@ frame_draws_brm_newfinaldata <- draws_brm_newfinaldata |>
     fr_emotion_early = b_Intercept + b_LanguageFrench,
     eng_emotion_late = b_Intercept + b_early_lateLatebilingual, 
     eng_neutral_early = b_Intercept + b_ConditionNeutral, 
-    fr_emotion_late = b_Intercept + b_early_lateLatebilingual + b_LanguageFrench + `b_early_lateLatebilingual:LanguageFrench`,
+    fr_emotion_late = b_Intercept + b_early_lateLatebilingual
+    + b_LanguageFrench + `b_early_lateLatebilingual:LanguageFrench`,
     eng_neutral_late = b_Intercept + b_ConditionNeutral + b_early_lateLatebilingual + `b_early_lateLatebilingual:ConditionNeutral`,
     fr_neutral_early = b_Intercept + b_LanguageFrench + b_ConditionNeutral + `b_LanguageFrench:ConditionNeutral`,
-    fr_neutral_late = b_Intercept + b_ConditionNeutral + b_LanguageFrench + b_early_lateLatebilingual + `b_early_lateLatebilingual:LanguageFrench` + `b_LanguageFrench:ConditionNeutral` + `b_early_lateLatebilingual:ConditionNeutral` +`b_early_lateLatebilingual:LanguageFrench:ConditionNeutral`
+    fr_neutral_late = b_Intercept + b_ConditionNeutral + b_LanguageFrench +
+      b_early_lateLatebilingual + `b_early_lateLatebilingual:LanguageFrench` + 
+      `b_LanguageFrench:ConditionNeutral` + `b_early_lateLatebilingual:ConditionNeutral` +
+      `b_early_lateLatebilingual:LanguageFrench:ConditionNeutral`
   ) |>
-  select(eng_emotion_early, fr_emotion_early, eng_emotion_late, eng_neutral_early, fr_emotion_late, eng_neutral_late, fr_neutral_early, fr_neutral_late)
+  select(eng_emotion_early, fr_emotion_early, eng_emotion_late, 
+         eng_neutral_early, fr_emotion_late, eng_neutral_late, 
+         fr_neutral_early, fr_neutral_late)
 
 ```
 
 ```{r}
-plot2 <- frame_draws_brm_newfinaldata
+plot2 <- frame_draws_brm_newfinaldata |>
+  select(eng_emotion_early, fr_emotion_early, eng_emotion_late, eng_neutral_early, fr_emotion_late, eng_neutral_late, fr_neutral_early, fr_neutral_late) |>
+pivot_longer(
+  eng_emotion_early:fr_neutral_late, 
+  names_to = "cond", 
+  values_to = "epred"
+) |>
+separate(cond, c("Language", "Condition", "Early_Late"))
+  
+  
 ```
 
-## Discussion
+```{r}
+plot2 |>
+  ggplot(aes(epred, Condition, fill = Language )) +
+  stat_halfeye(alpha = 0.7) +
+  scale_fill_manual(
+    labels = c("English", "French"),
+    values = c("lightskyblue2", "slateblue1") 
+  ) + facet_grid(cols = vars(Early_Late)) +
+  labs(title = "Reaction times (logged) across conditions for early and late bilinguals", x = "Reaction times (logged ms)")
+  
+  
+```
+
+#### Figure 2 - Age of acquisition (early or late bilingual) effect on logged reaction time (RT) across condition (emotion and neutral stimuli) and language (French and English). 
+
+I used a half-eye plot to demonstrate logged Reaction times on the x-axis, faceted by Participant group (early, late), and Condition on the y-axis (neutral, emotion), with colour differentiating language (English, French). The plot reflects the model draws, showing very little variability between performance of early and late bilinguals across condition and across language. 
+
+## 4. Discussion
 
 *Write a brief discussion of the your model results in light of the research question.*
+
+## 5. Appendix
+
+### Stimuli 
+
+| English - Emotion | French - Emotion | English - Neutral | French - Neutral  |
+|-------------------|------------------|-------------------|-------------------|
+| nervous           | nerveux          | engine            | barre             |
+| grief             | chagrin          | boom              | bôme              |
+| upset             | contrarié        | stern             | poupe             |
+| greed             | avidité          | cabin             | cabine            |
+| anxiety           | anxiété          | keel              | quille            |
+| jealousy          | jalousie         | motor             | moteur            |
+| lonely            | seul             | seat              | siège             |
+| scared            | effrayé          | deck              | pont              |
+| afraid            | craintif         | driver            | conducteur        |
+| panic             | panique          | propoeller        | hélice            |
+| fear              | peur             | floor             | plancher          |
+| angry             | énervé           | anchor            | ancre             |
+| disgusted         | dégoûté          | paddle            | pagaie            |
+| depressed         | déprimé          | beam              | barrot            |
+| mad               | furieux          | port              | bâbord            |
+| troubled          | tourmenté        | rope              | corde             |
