@@ -7,6 +7,9 @@ execute:
   echo: true
 ---
 
+
+
+
 ## Background
 
 The Stroop effect is a cognitive interference effect from the Stroop task [@stroop_studies_1935], whereby identification of a written colour word’s ink colour is slower when the written word is printed in a conflicting colour: for example, the word ‘blue’ printed in green ink is more slowly identified than when it is printed in blue link, due to interference from the automatic process of reading during colour identification. Subsequent research has led to several variations of the Stroop task. One such variant is the emotional Stroop task, in which participants identify the ink colour of emotionally salient and neutral words rather than colour words. The resulting interference effect is theorised to be the result of interference caused by the emotion stimuli, the process for which is automatic and immediate \[@bargh_automaticity_1997\]. In addition, the Stroop paradigm has been widely applied in bilingual contexts to examine patterns of interference across languages \[@magiste_stroop_1984\]. In bilinguals, research often reflects that the mother tongue (L1) is more strongly associated with emotion, while the second language (L2) can be used to create emotional distance [@dewaele_emotions_2010]. @articlesutton_automatic_2007 investigated the bilingual emotional Stroop task in Spanish bilinguals. They found an emotional Stroop effect, with highly efficient bilinguals displaying similar emotional interference effect in both languages, and concluded that the results reflect that emotional valence of lexical items can be automatically activated in more than one language. [@articlesutton_automatic_2007] had one participant group of English-Spanish early bilinguals, therefore the present study builds on the findings to investigate to what extent age of acquisition influences the emotional interference effect observed in an L1 and L2, in French-English bilingual speakers. The following study builds on the theory of the emotional Stroop effect and bilingual Stroop effect, to investigate the effect of age of acquisition of emotional interference in English-French bilingual speakers. 
@@ -91,6 +94,9 @@ To respect participant privacy, language questionnaires are not available.
 
 ### Reading and processing the data
 
+
+
+
 ```{r}
 #| label: read-data
 library(tidyverse)
@@ -126,7 +132,13 @@ finaldata <- bind_rows(compiledlist) |>
   )
 ```
 
+
+
+
 As the data were in separate files and lacking identifying columns, I firstly used list.files() to list all the available results files, and lapply() to compile them together, with read_csv(x, skip =3) in order to skip the first 3 rows of each dataset which did not contain any data. Then I used bind_rows() to read in this data into one dataset, filtered out the 6 practise conditions for each participant using filter(), and used mutate() in order to create a column which classified the participants as early or late bilinguals based on their participant number (participants numbers starting with 1 were early bilinguals, and starting with 2 were late bilinguals).
+
+
+
 
 ```{r}
 newfinaldata <- finaldata |>
@@ -151,9 +163,15 @@ newfinaldata$Condition <- recode(newfinaldata$Condition,
                                "neutral"  = "Neutral")
 ```
 
+
+
+
 I used separate_wider_delim() in order to create new columns which identified the condition (emotion and neutral) and language (French and English) (this information had been presented together in one column in the original Testable file, such as emotion_fr), and re-named the column names accordingly. The relevant columns are therefore Language (French/English stimuli), Early_Late (early or late bilingual), and Condition (emotion/neutral stimuli). Importantly, Reaction time (RT) appears in a column, which was captured by Testable.
 
 ### Summary of the raw data
+
+
+
 
 ```{r}
 newfinaldata |> 
@@ -161,6 +179,9 @@ newfinaldata |>
   summarise(
     mean = mean(RT), sd = sd(RT))
 ```
+
+
+
 
 In order to investigate if age of acquisition affects reaction time to emotion and neutral words in the bilingual Stroop task, I analysed participant reaction times across condition (neutral vs. emotion) and language (French vs. English) and obtained and standard deviation.
 
@@ -180,6 +201,9 @@ The differing patterns across participant groups in the raw data therefore sugge
 
 ### Plotting the raw data
 
+
+
+
 ```{r}
 newfinaldata |>
   ggplot(aes(early_late, RT, colour = Language)) +
@@ -191,6 +215,9 @@ newfinaldata |>
     title = "AoA (Early or Late Bilingual) influence on reaction time 
     to emotion and to neutral words")
 ```
+
+
+
 
 #### Figure 1 - Age of acquisition (early or late bilingual) effect on reaction time (RT) across condition (emotion and neutral stimuli) and language (French and English). 
 
@@ -205,6 +232,9 @@ There are some outliers across condition, group and language, but these appear t
 ### Regression modelling
 
 I used Bayesian log-normal regression model for the outcome variable reaction time (RT) using brms, as this distribution allows positive-only values, continuous variables, and is able to account for right-skewed data. This was fitted with Group (early vs late bilinguals), Language (French vs English) and Condition (emotion vs neutral) and their interactions as between-participant fixed effects, and Language (French vs English) and Condition (emotion vs neutral) as within-participant varying slopes, and including Participant ID as by-subject varying intercept to account for inter-participant variability. I then obtained summary measures. As the values are reported as logged reaction time, I used exp() to unlog on the relevant values.
+
+
+
 
 ```{r}
 brm_newfinaldata <- brm(
@@ -228,9 +258,15 @@ exp(6.17)  #Intercept_95%_lower_bound
 exp(6.92)  #Intercept_95%_upper_bound
 ```
 
+
+
+
 The model did converge, however the summary measures reflect a high degree of uncertainty. 
 
 At 95% credible internal, the model estimates that the mean reaction time for early bilinguals in the emotion and English condition is between 6.17 (lower bound) and 6.92 (upper bound) logged milliseconds, and 478.19ms (lower bound) and 1,0312.32ms (upper bound) unlogged milliseconds. All predictors cross zero at 95% credible internal, and therefore there is a high degree of uncertainty as to their effect size. 
+
+
+
 
 ```{r}
 summary(brm_newfinaldata, prob = 0.8)
@@ -241,7 +277,13 @@ exp(6.31)  #Intercept_80%_lower_bound
 exp(6.76)  #Intercept_80%_upper_bound
 ```
 
+
+
+
 At 80% credible interval, all predictors still cross zero, but to a lesser extent. The mean reaction time predicted at the Intercept (english_emotion_early) is between 6.31 logged milliseconds and 6.76 logged milliseconds, and 550.04 and 862.64 unlogged milliseconds.  
+
+
+
 
 ```{r}
 summary(brm_newfinaldata, prob = 0.6)
@@ -256,9 +298,15 @@ exp(-0.14) #LanguageFrench_lower_bound
 exp(-0.03) #LanguageFrench_lower_bound
 ```
 
+
+
+
 Finally, at 60% credibility, the predicted reaction time at the intercept is between 6.17 and 6.92 logged milliseconds, or between 595.86 and 788.38 unlogged milliseconds (english_emotion_early). At 60% credibility, two predictors now show a decrease in log milliseconds. Firstly, english_emotion_late shows an effect size between -0.49 and -0.09 (logged) or 0.61 to 0.91 (unlogged), suggesting that late bilinguals are predicted to be faster than early bilinguals in the emotion/English condition. Secondly, french_emotion_early show an effect size between -0.14 and -0.03 (logged) or 0.86 to 0.97 (unlogged), suggesting that early bilinguals in the emotion condition are likely to show a faster reaction time in French than in English. However, the remaining predictors cross zero and thererefore there remains a high degree of uncertainty regarding how these predictors interact across the model. 
 
 After obtaining summary measures at 95%, 80% and 60% credible intervals, I obtained the model draws, implementing the relevant predictors and interactions based on the b_Intercept as english_emotion_early. I then used select() the relevant columns (predictors and their interactions) and pivot_longer() in order to make new columns for these predictors, which I could then plot into the graph (below).
+
+
+
 
 ```{r}
 draws_brm_newfinaldata <- as_draws_df(brm_newfinaldata)
@@ -320,6 +368,9 @@ plot2 |>
   
 ```
 
+
+
+
 #### Figure 2 - Age of acquisition (early or late bilingual) effect on logged reaction time (RT) across condition (emotion and neutral stimuli) and language (French and English). 
 
 I used a half-eye plot to demonstrate logged Reaction times on the x-axis, faceted by Participant group (early, late), and Condition on the y-axis (neutral, emotion), with colour differentiating language (English, French). The plot reflects the model draws, showing very little variability between performance of early and late bilinguals across condition and across language. The most noticeable variation is in the emotion condition for early bilinguals, who appear to show a slightly faster reaction time in French than in English: the model did predict a negative effect on reaction time (i.e. faster reaction time) in these conditions at 60% credibility, however the summary measures showed this to still have a large degree of uncertainty.
@@ -372,3 +423,4 @@ Finally, it is likely that the stimuli presented some difficulties, since the st
 | depressed         | déprimé          | beam              | barrot            |
 | mad               | furieux          | port              | bâbord            |
 | troubled          | tourmenté        | rope              | corde             |
+
